@@ -41,12 +41,13 @@ This function should only modify configuration layer settings."
      ;; Editor Features
      (shell :variables
             shell-default-height 30
-            shell-default-position 'bottom)
+            shell-default-position 'right)
      version-control
      syntax-checking
      helm
      auto-completion
      themes-megapack
+     graphviz
 
      ;; Utilities
      search-engine
@@ -474,36 +475,46 @@ before packages are loaded."
   (with-eval-after-load 'org
     ;; here goes your Org config :)
     ;; ORG SETUP
-    (setq org-capture-templates
-          '(("t" "Todo" entry
-             (file+headline
-              "~/Dropbox/notes/notes.org"
-              "Tasks")
-             "* TODO %?\n%T\n%a")
-            ("n" "Note" entry
-             (file+headline
-              "~/Dropbox/notes/notes.org"
-              "Notes")
-             "* %?\n%T\n%a\n")
-            ("u" "URL" entry
-             (file+headline
-              "~/Dropbox/notes/notes.org"
-              "Links")
-             "*  %?\n%T\n%a")
-            ("r" "Recommendation" entry
-             (file+headline
-              "~/Dropbox/notes/notes.org"
-              "Recommendations"
-              "* %?\n%T\n%a\n"))
-            ("w" "Work note" entry
-             (file+headline
-              "~/OneDrive - BlueVolt/bv-notes/2019/q1/10.91.org"
-              "Working Notes")
-             "* %?\n%T\n%a")))
 
-    (setq org-agenda-files '("~/OneDrive - BlueVolt/bv-notes"
+    (setq org-todo-keywords '((sequence "TODO" "DONE")
+                              (sequence "NEW" "INPROGRESS" "CODEREVIEW" "TEAMREVIEW" "POREVIEW" "MERGED"))
+
+          org-todo-keyword-faces '(("NEW" . "gray")
+                                   ("INPROGRESS" . "blue")
+                                   ("CODEREVIEW" . "yellow")
+                                   ("TEAMREVIEW" . "orange")
+                                   ("POREVIEW" . "orange")
+                                   ("MERGED" . "green"))
+
+          org-agenda-files '("~/OneDrive - BlueVolt/bv-notes"
                              "~/OneDrive - BlueVolt/bv-notes/2019/q1"
-                             "~/Dropbox/notes"))
+                             "~/Dropbox/notes")
+
+          org-capture-templates '(("t" "Todo" entry
+                                   (file+headline
+                                    "~/Dropbox/notes/notes.org"
+                                    "Tasks")
+                                   "* TODO %?\n%T\n%a")
+                                  ("n" "Note" entry
+                                   (file+headline
+                                    "~/Dropbox/notes/notes.org"
+                                    "Notes")
+                                   "* %?\n%T\n%a\n")
+                                  ("u" "URL" entry
+                                   (file+headline
+                                    "~/Dropbox/notes/notes.org"
+                                    "Links")
+                                   "*  %?\n%T\n%a")
+                                  ("r" "Recommendation" entry
+                                   (file+headline
+                                    "~/Dropbox/notes/notes.org"
+                                    "Recommendations"
+                                    "* %?\n%T\n%a\n"))
+                                  ("w" "Work note" entry
+                                   (file+headline
+                                    "~/OneDrive - BlueVolt/bv-notes/2019/q1/10.91.org"
+                                    "Working Notes")
+                                   "* %?\n%T\n%a")))
 
     (setq spaceline-org-clock-p t)
 
@@ -514,6 +525,7 @@ before packages are loaded."
     (with-eval-after-load 'evil
       (evil-set-initial-state 'org-brain-visualize-mode 'emacs))
     :config
+
     (setq org-id-track-globally t)
     (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
     (push '("b" "Brain" plain (function org-brain-goto-end)
@@ -521,17 +533,7 @@ before packages are loaded."
           org-capture-templates)
     (setq org-brain-visualize-default-choices 'all)
 
-    (setq org-todo-keywords '((sequence "TODO" "DOING" "DONE")
-                              (sequence "NEW" "INPROGRESS" "CODEREVIEW" "TEAMREVIEW" "POREVIEW" "MERGED")))
-
-    (setq org-todo-keyword-faces
-          '(("NEW" . "gray")
-            ("INPROGRESS" . "blue")
-            ("CODEREVIEW" . "yellow")
-            ("TEAMREVIEW" . "orange")
-            ("POREVIEW" . "orange")
-            ("MERGED" . "green")))
-    ))
+    )
 
   ;; Do not write anything past this comment. This is where Emacs will
   ;; auto-generate custom variable definitions.
@@ -557,7 +559,7 @@ This function is called at the very end of Spacemacs initialization."
      ;; Your init file should contain only one such instance.
      ;; If there is more than one, they won't work right.
      )
-    )
+    ))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -565,7 +567,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (web-beautify livid-mode skewer-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode zenburn-theme zen-and-art-theme xterm-color ws-butler winum white-sand-theme which-key volatile-highlights vi-tilde-fringe uuidgen use-package underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spaceline spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smeargle shell-pop seti-theme reverse-theme restart-emacs rebecca-theme rainbow-delimiters railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pcre2el paradox spinner ox-reveal orgit organic-green-theme org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-bullets open-junk-file omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme neotree naquadah-theme mustang-theme multi-term move-text monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minimal-theme material-theme markdown-toc markdown-mode majapahit-theme magit-gitflow magit-popup madhat2r-theme macrostep lush-theme lorem-ipsum linum-relative link-hint light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme indent-guide hydra hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation heroku-theme hemisu-theme helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile helm-gitignore request helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md gandalf-theme fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck pkg-info epl flx-ido flx flatui-theme flatland-theme fill-column-indicator farmhouse-theme fancy-battery eyebrowse expand-region exotica-theme exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit transient git-commit with-editor lv evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu espresso-theme eshell-z eshell-prompt-extras esh-help engine-mode elisp-slime-nav elfeed-web simple-httpd elfeed-org elfeed-goodies ace-jump-mode noflet powerline popwin elfeed dumb-jump f s dracula-theme django-theme diminish diff-hl define-word darktooth-theme autothemer dash darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme company-statistics company column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme clean-aindent-mode cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme bind-map bind-key badwolf-theme auto-yasnippet yasnippet auto-highlight-symbol auto-dictionary auto-compile packed apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes aggressive-indent afternoon-theme adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup))))
+    (graphviz-dot-mode web-beautify livid-mode skewer-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode zenburn-theme zen-and-art-theme xterm-color ws-butler winum white-sand-theme which-key volatile-highlights vi-tilde-fringe uuidgen use-package underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spaceline spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smeargle shell-pop seti-theme reverse-theme restart-emacs rebecca-theme rainbow-delimiters railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pcre2el paradox spinner ox-reveal orgit organic-green-theme org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-bullets open-junk-file omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme neotree naquadah-theme mustang-theme multi-term move-text monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minimal-theme material-theme markdown-toc markdown-mode majapahit-theme magit-gitflow magit-popup madhat2r-theme macrostep lush-theme lorem-ipsum linum-relative link-hint light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme indent-guide hydra hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation heroku-theme hemisu-theme helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile helm-gitignore request helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md gandalf-theme fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck pkg-info epl flx-ido flx flatui-theme flatland-theme fill-column-indicator farmhouse-theme fancy-battery eyebrowse expand-region exotica-theme exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit transient git-commit with-editor lv evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu espresso-theme eshell-z eshell-prompt-extras esh-help engine-mode elisp-slime-nav elfeed-web simple-httpd elfeed-org elfeed-goodies ace-jump-mode noflet powerline popwin elfeed dumb-jump f s dracula-theme django-theme diminish diff-hl define-word darktooth-theme autothemer dash darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme company-statistics company column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme clean-aindent-mode cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme bind-map bind-key badwolf-theme auto-yasnippet yasnippet auto-highlight-symbol auto-dictionary auto-compile packed apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes aggressive-indent afternoon-theme adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -34,7 +34,6 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     javascript
      ;; Version Control
      git
 
@@ -43,6 +42,7 @@ This function should only modify configuration layer settings."
             shell-default-height 30
             shell-default-position 'bottom)
      version-control
+     spell-checking
      syntax-checking
      helm
      auto-completion
@@ -60,6 +60,8 @@ This function should only modify configuration layer settings."
           org-startup-indented t)
      markdown
      emacs-lisp
+     rust
+     javascript
      )
 
    ;; List of additional packages that will be installed without being
@@ -69,7 +71,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(editorconfig)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -211,7 +213,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Variable"
-                               :size 18
+                               :size 16
                                :weight normal
                                :width normal)
 

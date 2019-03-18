@@ -518,6 +518,7 @@ before packages are loaded."
                                     "Working Notes")
                                    "* %?\n%T\n%a")))
 
+    (add-hook 'org-capture-mode-hook 'evil-insert-state)
     (setq spaceline-org-clock-p t)
 
     ;; ORG BRAIN SETUP

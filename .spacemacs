@@ -33,21 +33,23 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(html
+     javascript
      ;; Version Control
      git
 
      ;; Editor Features
      (shell :variables
+            shell-default-shell 'shell
             shell-default-height 30
             shell-default-position 'bottom)
      version-control
-     spell-checking
      syntax-checking
      helm
      auto-completion
      themes-megapack
      graphviz
+     emoji
 
      ;; Utilities
      search-engine
@@ -57,11 +59,12 @@ This function should only modify configuration layer settings."
      (org :variables
           org-want-todo-bindings t
           org-enable-reveal-js-support t
+          org-enable-org-journal-support t
           org-startup-indented t)
      markdown
      emacs-lisp
-     rust
-     javascript
+     prettier
+     elm
      )
 
    ;; List of additional packages that will be installed without being
@@ -71,7 +74,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(editorconfig)
+   dotspacemacs-additional-packages '(editorconfig emojify)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -213,7 +216,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Variable"
-                               :size 16
+                               :size 18
                                :weight normal
                                :width normal)
 
@@ -471,8 +474,11 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
   (add-hook 'text-mode-hook '(lambda() (visual-line-mode t)))
   (add-hook 'elfeed-show-mode-hook '(lambda() (visual-line-mode t)))
+
+  (editorconfig-mode 1)
 
   (with-eval-after-load 'org
     ;; here goes your Org config :)
@@ -482,15 +488,13 @@ before packages are loaded."
                               (sequence "NEW" "INPROGRESS" "CODEREVIEW" "TEAMREVIEW" "POREVIEW" "MERGED"))
 
           org-todo-keyword-faces '(("NEW" . "gray")
-                                   ("INPROGRESS" . "blue")
+                                   ("INPROGRESS" . "#007acc")
                                    ("CODEREVIEW" . "yellow")
                                    ("TEAMREVIEW" . "orange")
                                    ("POREVIEW" . "orange")
                                    ("MERGED" . "green"))
 
-          org-agenda-files '("~/OneDrive - BlueVolt/bv-notes"
-                             "~/OneDrive - BlueVolt/bv-notes/2019/q1"
-                             "~/Dropbox/notes")
+          org-agenda-files '("~/OneDrive - BlueVolt/bv-notes" "~/Dropbox/notes")
 
           org-capture-templates '(("t" "Todo" entry
                                    (file+headline
@@ -514,11 +518,22 @@ before packages are loaded."
                                     "* %?\n%T\n%a\n"))
                                   ("w" "Work note" entry
                                    (file+headline
-                                    "~/OneDrive - BlueVolt/bv-notes/2019/q2/10.92.org"
+                                    "~/OneDrive - BlueVolt/bv-notes/10.94.org"
                                     "Working Notes")
-                                   "* %?\n%T\n%a")))
+                                   "* %?\n%T\n%a")
+                                  ("g" "Gripe" entry
+                                   (file+headline
+                                    "~/Dropbox/notes/gripes.org"
+                                    "Gripes")
+                                   "* %?\n%T\n%a")
+                                  )
+          org-enforce-todo-dependencies t)
+
+    (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
     (setq spaceline-org-clock-p t)
+
+    (setq org-journal-dir "~/Dropbox/notes/journal/")
 
     ;; ORG BRAIN SETUP
     (setq org-brain-path "~/Dropbox/notes/brain")
@@ -576,3 +591,29 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files
+   (quote
+    ("c:/Users/ryan.streur/OneDrive - BlueVolt/bv-notes/10.94.org" "c:/Users/ryan.streur/OneDrive - BlueVolt/bv-notes/faster.org" "c:/Users/ryan.streur/OneDrive - BlueVolt/bv-notes/gripes.org" "c:/Users/ryan.streur/OneDrive - BlueVolt/bv-notes/sprint-template.org" "c:/Users/ryan.streur/OneDrive - BlueVolt/bv-notes/tools.org")))
+ '(org-modules
+   (quote
+    (org-bbdb org-bibtex org-docview org-eww org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
+ '(package-selected-packages
+   (quote
+    (autothemer simple-httpd ace-jump-mode noflet elfeed engine-mode fringe-helper git-gutter+ git-gutter flyspell-correct pos-tip flycheck org-category-capture alert log4e gntp markdown-mode htmlize gitignore-mode magit-popup magit transient git-commit with-editor lv company yasnippet auto-complete evil-mc zenburn-theme zen-and-art-theme yasnippet-snippets xterm-color ws-butler writeroom-mode winum white-sand-theme which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme tagedit symon sunny-day-theme sublime-themes subatomic256-theme subatomic-theme string-inflection spaceline-all-the-icons spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smeargle slim-mode shell-pop seti-theme scss-mode sass-mode reverse-theme restart-emacs rebecca-theme rainbow-mode rainbow-identifiers rainbow-delimiters railscasts-theme purple-haze-theme pug-mode professional-theme prettier-js planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pcre2el password-generator paradox ox-reveal overseer orgit organic-green-theme org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme nameless mwim mustang-theme multi-term move-text monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minimal-theme material-theme markdown-toc majapahit-theme magit-svn magit-gitflow madhat2r-theme macrostep lush-theme lorem-ipsum link-hint light-soap-theme kaolin-themes jbeans-theme jazz-theme ir-black-theme inkpot-theme indent-guide impatient-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation heroku-theme hemisu-theme helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md gandalf-theme fuzzy font-lock+ flyspell-correct-helm flycheck-pos-tip flx-ido flatui-theme flatland-theme fill-column-indicator farmhouse-theme fancy-battery eziam-theme eyebrowse expand-region exotica-theme evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu espresso-theme eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav elfeed-web elfeed-org elfeed-goodies editorconfig dumb-jump dracula-theme dotenv-mode doom-themes doom-modeline django-theme diminish diff-hl define-word darktooth-theme darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme counsel-projectile company-web company-statistics column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized color-identifiers-mode clues-theme clojure-snippets clean-aindent-mode cider-eval-sexp-fu cider cherry-blossom-theme centered-cursor-mode busybee-theme bubbleberry-theme browse-at-remote birds-of-paradise-plus-theme badwolf-theme auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes aggressive-indent afternoon-theme ace-link ace-jump-helm-line ac-ispell))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)

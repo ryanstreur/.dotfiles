@@ -9,3 +9,7 @@ Mostly this repo is an effort to get my configuration under control, and to make
 ## Gitconfig
 
 http://michaelwales.com/articles/make-gitconfig-work-for-you/
+
+## .vimrc
+
+https://github.com/Shougo/dein.vim#quick-start

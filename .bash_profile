@@ -12,8 +12,6 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-#PS1="\e[0;35m\w\e[m \e[0;33m|\e[m \e[0;36m\$(parse_git_branch)\e[m 🐌 "
-
 # Set Gopath
 export GOPATH=$HOME/go
 
@@ -24,5 +22,4 @@ export GTAGSLABEL=ctags
 
 alias emacs="/usr/local/Cellar/emacs/26.1_1/bin/emacs"
 
-alias weather="curl wttr.in/portland"
 

@@ -6,10 +6,42 @@ Mostly this repo is an effort to get my configuration under control, and to make
 
 - GitHub user [Demophoon's](https://github.com/demophoon/dotfiles)
 
+## Shell
+
+* Install Oh My Zsh
+
+https://github.com/ohmyzsh/ohmyzsh
+`sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+
+* Install Oh My Tmux
+
+https://github.com/gpakosz/.tmux
+```bash
+cd
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cp .tmux/.tmux.conf.local .
+```
+
 ## Gitconfig
 
 http://michaelwales.com/articles/make-gitconfig-work-for-you/
 
 ## .vimrc
+ 
+https://github.com/VundleVim/Vundle.vim#quick-start
 
-https://github.com/Shougo/dein.vim#quick-start
+## Terminal Emulators
+
+### Windows Terminal
+
+* [using the JSON settings](https://github.com/microsoft/terminal/blob/master/doc/cascadia/SettingsSchema.md)
+
+## Linux Programs
+
+* Ack
+* Git
+* nvm
+
+* pip3 install --user pynvim
+brain data org.md org.org recurring.org rsg-notes.md rsg-todo.md Install exuberant ctags

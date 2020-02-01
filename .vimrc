@@ -23,12 +23,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
 
-Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'xolox/vim-easytags'
+Plugin 'majutsushi/tagbar'
+
 Plugin 'tpope/vim-fugitive'
 Plugin 'wincent/Command-T'
-
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'Shougo/denite.nvim'
+Plugin 'valloric/youcompleteme'
 
 " Languages
 Plugin 'pangloss/vim-javascript'
@@ -149,3 +149,7 @@ syntax enable
 highlight GitGutterAdd    guifg=#009900 guibg=<X>
 highlight GitGutterChange guifg=#bbbb00 guibg=<X>
 highlight GitGutterDelete guifg=#ff2222 guibg=<X>
+
+" Omnicomplete
+set omnifunc=syntaxcomplete#Complete
+

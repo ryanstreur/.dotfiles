@@ -44,4 +44,8 @@ https://github.com/VundleVim/Vundle.vim#quick-start
 * nvm
 
 * pip3 install --user pynvim
+
 brain data org.md org.org recurring.org rsg-notes.md rsg-todo.md Install exuberant ctags
+
+Stuff I think is neat in general!
+https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes#spaceship-zsh

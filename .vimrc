@@ -1,35 +1,12 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
+" Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" 
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
- 
 
-" Other Plugins
 " Colors
 Plugin 'sjl/badwolf'
 Plugin 'flazz/vim-colorschemes'
@@ -44,7 +21,14 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+let NERDTreeShowHidden=1
+
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'tpope/vim-fugitive'
+Plugin 'wincent/Command-T'
+
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'Shougo/denite.nvim'
 
 " Languages
 Plugin 'pangloss/vim-javascript'
@@ -53,6 +37,7 @@ Plugin 'othree/html5.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'ElmCast/elm-vim'
+
 " Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -63,8 +48,6 @@ Plugin 'junegunn/goyo.vim'
 
 Plugin 'https://github.com/vim-scripts/utl.vim.git'
 
-" OrgMode
-Plugin 'https://github.com/jceb/vim-orgmode.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -160,92 +143,8 @@ let g:syntastic_check_on_wq = 0
 colorscheme monokai-phoenix
 let g:badwolf_darkgutter = 1
 
-" Font
-if has ("gui_running")
-  if has ("gui_gtk2")
-    :set guifont=Courier\ New\ 10
-  elseif has ("gui_win32")
-    :set guifont=Courier_New:h10:cANSI
-  endif
-endif
-
-""""
-" Dein Section
-""""
-
-if &compatible
-  set nocompatible
-endif
-" Add the dein installation directory into runtimepath
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
-
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/deoplete.nvim')
-
-  call dein#add('Shougo/denite.nvim')
-
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-
-  call dein#end()
-  call dein#save_state()
-endif
-
-autocmd FileType denite call s:denite_my_settings()
-function! s:denite_my_settings() abort
-  nnoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> d
-  \ denite#do_map('do_action', 'delete')
-  nnoremap <silent><buffer><expr> p
-  \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> q
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> i
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <Space>
-  \ denite#do_map('toggle_select').'j'
-endfunction
-
-call denite#custom#alias('source', 'file/rec/git', 'file/rec')
-call denite#custom#var('file/rec/git', 'command',
-\ ['git', 'ls-files', '-co', '--exclude-standard'])
-nnoremap <silent> <C-p> :<C-u>DeniteProjectDir file/rec 
-"\ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
-
-" Ripgrep command on grep source
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts',
-    \ ['-i', '--vimgrep', '--no-heading'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-
 filetype plugin indent on
 syntax enable
-
-" Custom Keybindings
-nnoremap <AS-f> :Denite -start-filter grep:::!<CR>
-nnoremap <AS-;> :Denite grep:::!<CR>
-
-"" Emmet
-let g:user_emmet_leader_key = '<C-y>'
-
-" doesn't work nnoremap <M-Up> ddkPk=j
-
-" doesn't work nnoremap <M-Down> ddjpj=k
-" GitGutter colors
 
 highlight GitGutterAdd    guifg=#009900 guibg=<X>
 highlight GitGutterChange guifg=#bbbb00 guibg=<X>

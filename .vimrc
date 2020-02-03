@@ -23,12 +23,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
 
+Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'wincent/Command-T'
-Plugin 'valloric/youcompleteme'
 
 " Languages
 Plugin 'pangloss/vim-javascript'

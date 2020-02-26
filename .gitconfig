@@ -1,6 +1,10 @@
 [user]
 	name = Ryan Streur
-	email = ryan.streur@bluevolt.com
+	email = ryan.streur@protonmail.com
+
+[core]
+  autocrlf = false
+
 [winUpdater]
 	recentlySeenVersion = 2.20.1.windows.1
 

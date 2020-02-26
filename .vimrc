@@ -6,7 +6,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-
 " Colors
 Plugin 'sjl/badwolf'
 Plugin 'flazz/vim-colorschemes'
@@ -22,6 +21,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
+Plugin 'ycm-core/YouCompleteMe'
+
+Plugin 'sbdchd/neoformat'
+Plugin 'editorconfig/editorconfig-vim'
 
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
@@ -103,26 +106,21 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " Ctrl P Config
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,bower_components,vendor
-let g:ctrlp_working_path_mode = 'c'
-
-" Ack search config
-" Prefer rg > ag > ack
-if executable('rg')
-  let g:ackprg = 'rg -S --no-heading --vimgrep'
-elseif executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+let g:ctrlp_show_hidden = 1
 
 " Vim-Markdown Config
 let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_autowrite = 1
 let g:vim_markdown_conceal = 0
 
+" EditorConfig Config
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Syntastic Recommended Config https://github.com/vim-syntastic/syntastic#3-recommended-settings 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
 " More Syntastic Config
 let g:syntastic_html_tidy_ignore_errors=[
     \'proprietary attribute "ng-',
@@ -145,10 +143,6 @@ let g:badwolf_darkgutter = 1
 
 filetype plugin indent on
 syntax enable
-
-highlight GitGutterAdd    guifg=#009900 guibg=<X>
-highlight GitGutterChange guifg=#bbbb00 guibg=<X>
-highlight GitGutterDelete guifg=#ff2222 guibg=<X>
 
 " Omnicomplete
 set omnifunc=syntaxcomplete#Complete

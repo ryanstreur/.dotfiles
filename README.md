@@ -64,3 +64,5 @@ let g:netrw_browsex_viewer="cmd.exe /C start"
 let x = 3;
 ```
 
+Setting up gtags today
+http://manpages.ubuntu.com/manpages/bionic/man5/gtags.conf.5.html

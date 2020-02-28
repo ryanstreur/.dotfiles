@@ -19,12 +19,15 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
 Plugin 'ycm-core/YouCompleteMe'
 
-Plugin 'sbdchd/neoformat'
+" Plugin 'sbdchd/neoformat'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'dense-analysis/ale'
 
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
@@ -37,17 +40,17 @@ Plugin 'wincent/Command-T'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'ElmCast/elm-vim'
 
 " Markdown
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+" Plugin 'plasticboy/vim-markdown'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'junegunn/goyo.vim'
-" Plugin 'https://github.com/rlue/vim-getting-things-down.git'
+Plugin 'gabrielelana/vim-markdown'
 
 Plugin 'https://github.com/vim-scripts/utl.vim.git'
 
@@ -117,28 +120,29 @@ let g:vim_markdown_conceal = 0
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Syntastic Recommended Config https://github.com/vim-syntastic/syntastic#3-recommended-settings 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 " More Syntastic Config
-let g:syntastic_html_tidy_ignore_errors=[
-    \'proprietary attribute "ng-',
-    \'proprietary attribute "pdk-'
-    \
-\]
+" let g:syntastic_html_tidy_ignore_errors=[
+    " \'proprietary attribute "ng-',
+    " \'proprietary attribute "pdk-'
+    " \
+" \]
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_javascript_checkers = ['eslint']
 
 " Keyboard Shortcut Config
 :nnoremap <F5> "=strftime("%c")<CR>P
 :inoremap <F5> <C-R>=strftime("%c")<CR>
 
 " Color Configuration
-colorscheme monokai-phoenix
+colorscheme Atelier_SeasideDark
 let g:badwolf_darkgutter = 1
 
 filetype plugin indent on
@@ -146,4 +150,43 @@ syntax enable
 
 " Omnicomplete
 set omnifunc=syntaxcomplete#Complete
+
+"JavaScript
+
+let g:javascript_plugin_jsdoc = 1
+augroup javascript_folding
+  au!
+  au FileType javascript setlocal foldmethod=syntax
+augroup END
+
+let g:javascript_conceal_function             = "ƒ"
+" let g:javascript_conceal_null                 = "ø"
+" let g:javascript_conceal_this                 = "@"
+" let g:javascript_conceal_return               = "⇚"
+" let g:javascript_conceal_undefined            = "¿"
+" let g:javascript_conceal_NaN                  = "ℕ"
+" let g:javascript_conceal_prototype            = "¶"
+" let g:javascript_conceal_static               = "•"
+" let g:javascript_conceal_super                = "Ω"
+" let g:javascript_conceal_arrow_function       = "⇒"
+let g:javascript_conceal_noarg_arrow_function = "🞅"
+let g:javascript_conceal_underscore_arrow_function = "🞅"
+
+" Easytags config
+let g:easytags_async = 1
+
+set conceallevel=1
+set foldlevel=2
+
+""""""""""""""""""""
+" ALE Config
+""""""""""""""""""""
+let g:ale_fixers = {
+      \  'javascript': ['prettier'],
+      \  'css': ['prettier'],
+      \  'html': ['prettier'],
+      \  'json': ['prettier'],
+      \}
+
+let g:ale_fix_on_save = 1
 

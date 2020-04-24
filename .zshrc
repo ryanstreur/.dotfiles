@@ -1,7 +1,12 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/miniconda3/bin:$PATH
-export PATH=/usr/share:$PATH
+export GOPATH=$HOME/go-work
+
+export PATH=$PATH/usr/local/bin
+export PATH=$PATH:GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/miniconda3/bin
+export PATH=$PATH:/usr/share
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -55,7 +60,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  common-aliases
   django
   docker
   vscode # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins#vscode

@@ -5,7 +5,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-
+ 
 " Colors
 Plugin 'sjl/badwolf'
 Plugin 'flazz/vim-colorschemes'
@@ -24,9 +24,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'townk/vim-autoclose'
 
-" Plugin 'sbdchd/neoformat'
-Plugin 'editorconfig/editorconfig-vim'
 Plugin 'dense-analysis/ale'
 
 Plugin 'xolox/vim-misc'
@@ -38,6 +37,8 @@ Plugin 'wincent/Command-T'
 
 " Languages
 Plugin 'pangloss/vim-javascript'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'posva/vim-vue'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 " Plugin 'vim-syntastic/syntastic'
@@ -46,11 +47,10 @@ Plugin 'ElmCast/elm-vim'
 
 " Markdown
 Plugin 'godlygeek/tabular'
-" Plugin 'plasticboy/vim-markdown'
+Plugin 'gabrielelana/vim-markdown'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'junegunn/goyo.vim'
-Plugin 'gabrielelana/vim-markdown'
 
 Plugin 'https://github.com/vim-scripts/utl.vim.git'
 
@@ -116,8 +116,6 @@ let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_autowrite = 1
 let g:vim_markdown_conceal = 0
 
-" EditorConfig Config
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Syntastic Recommended Config https://github.com/vim-syntastic/syntastic#3-recommended-settings 
 " set statusline+=%#warningmsg#
@@ -184,9 +182,14 @@ set foldlevel=2
 let g:ale_fixers = {
       \  'javascript': ['prettier'],
       \  'css': ['prettier'],
-      \  'html': ['prettier'],
-      \  'json': ['prettier'],
-      \}
+    \  'html': ['prettier'],
+    \  'json': ['prettier'],
+    \}
 
 let g:ale_fix_on_save = 1
 
+
+" EditorConfig Config
+
+Plugin 'editorconfig/editorconfig-vim'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']

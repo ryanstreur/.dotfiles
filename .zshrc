@@ -1,13 +1,18 @@
 # If you come from bash you might have to change your $PATH.
 export GOPATH=$HOME/go-work
 
-export PATH=$PATH/usr/local/bin
+export PATH=$PATH:$HOME/.local/bin 
 export PATH=$PATH:GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/miniconda3/bin
 export PATH=$PATH:/usr/share
 export PATH=$PATH:~/bin
+
+export PATH=$PATH:/usr/local/lib/python3.6/dist-packages
+
+export DENO_INSTALL="/home/ryan/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh

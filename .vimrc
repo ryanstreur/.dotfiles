@@ -136,8 +136,9 @@ let g:vim_markdown_conceal = 0
 " let g:syntastic_javascript_checkers = ['eslint']
 
 " Keyboard Shortcut Config
-:nnoremap <F5> "=strftime("%c")<CR>P
-:inoremap <F5> <C-R>=strftime("%c")<CR>
+nnoremap <F5> "=strftime("%c")<CR>P
+inoremap <F5> <C-R>=strftime("%c")<CR>
+inoremap {<CR> {<CR>}<C-o>O
 
 " Color Configuration
 colorscheme Atelier_SeasideDark

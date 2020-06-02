@@ -53,7 +53,7 @@ This function should only modify configuration layer settings."
 
      ;; Utilities
      search-engine
-     (elfeed :variables rmh-elfeed-org-files (list "~/Dropbox/notes/elfeed.org"))
+     (elfeed :variables rmh-elfeed-org-files (list "~/.dotfiles/feed.org"))
 
      ;; Language Support
      (org :variables
@@ -494,40 +494,35 @@ before packages are loaded."
                                    ("POREVIEW" . "orange")
                                    ("MERGED" . "green"))
 
-          org-agenda-files '("~/OneDrive - BlueVolt/bv-notes" "~/Dropbox/notes")
+          org-agenda-files '("/mnt/c/Users/ryan.streur/projects/rsg-notes/org")
 
           org-capture-templates '(("t" "Todo" entry
                                    (file+headline
-                                    "~/Dropbox/notes/notes.org"
+                                    "/mnt/c/Users/ryan.streur/projects/rsg-notes/working.org"
                                     "Tasks")
                                    "* TODO %?\n%T\n%a")
                                   ("n" "Note" entry
                                    (file+headline
-                                    "~/Dropbox/notes/notes.org"
+                                    "/mnt/c/Users/ryan.streur/projects/rsg-notes/working.org"
                                     "Notes")
                                    "* %?\n%T\n%a\n")
                                   ("u" "URL" entry
                                    (file+headline
-                                    "~/Dropbox/notes/notes.org"
+                                    "/mnt/c/Users/ryan.streur/projects/rsg-notes/links.org"
                                     "Links")
                                    "*  %?\n%T\n%a")
-                                  ("r" "Recommendation" entry
-                                   (file+headline
-                                    "~/Dropbox/notes/notes.org"
-                                    "Recommendations"
-                                    "* %?\n%T\n%a\n"))
-                                  ("w" "Work note" entry
-                                   (file+headline
-                                    "~/OneDrive - BlueVolt/bv-notes/10.94.org"
-                                    "Working Notes")
-                                   "* %?\n%T\n%a")
                                   ("g" "Gripe" entry
                                    (file+headline
-                                    "~/Dropbox/notes/gripes.org"
+                                    "/mnt/c/Users/ryan.streur/projects/rsg-notes/gripes.org"
                                     "Gripes")
                                    "* %?\n%T\n%a")
+                                  ("p" "Problem" entry
+                                    (file+headline
+                                      "/mnt/c/Users/ryan.streur/projects/rsg-notes/working.org"
+                                      "Problems")
+                                    "* %?\n%T\n%a")
                                   )
-          org-enforce-todo-dependencies t)
+          )
 
     (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
@@ -549,6 +544,8 @@ before packages are loaded."
             "* %i%?" :empty-lines 1)
           org-capture-templates)
     (setq org-brain-visualize-default-choices 'all)
+
+    (setq browse-url-firefox-program "cmd.exe /C start")
 
     )
 
@@ -601,9 +598,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files
-   (quote
-    ("c:/Users/ryan.streur/OneDrive - BlueVolt/bv-notes/10.94.org" "c:/Users/ryan.streur/OneDrive - BlueVolt/bv-notes/faster.org" "c:/Users/ryan.streur/OneDrive - BlueVolt/bv-notes/gripes.org" "c:/Users/ryan.streur/OneDrive - BlueVolt/bv-notes/sprint-template.org" "c:/Users/ryan.streur/OneDrive - BlueVolt/bv-notes/tools.org")))
+ '(org-agenda-files nil)
  '(org-modules
    (quote
     (org-bbdb org-bibtex org-docview org-eww org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
@@ -615,5 +610,5 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:background nil)))))
 )

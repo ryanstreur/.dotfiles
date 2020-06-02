@@ -31,6 +31,13 @@ http://michaelwales.com/articles/make-gitconfig-work-for-you/
  
 https://github.com/VundleVim/Vundle.vim#quick-start
 
+```vimscript
+" Set start command for WSL to open files in
+" Windows OS, not ubuntu
+let g:netrw_browsex_viewer="cmd.exe /C start"
+```
+
+
 ## Terminal Emulators
 
 ### Windows Terminal
@@ -54,14 +61,9 @@ Ubuntu packages to install
 
 zsh
 
-```vimscript
-" Set start command for WSL to open files in
-" Windows OS, not ubuntu
-let g:netrw_browsex_viewer="cmd.exe /C start"
-```
-
-```javascript
-let x = 3;
+below required to open links in WSL in windows browser
+```bash
+export BROWSER='/mnt/c/Program Files/Firefox/firefox.exe'
 ```
 
 Setting up gtags today

@@ -22,8 +22,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdtree'
-let NERDTreeShowHidden=1
-Plugin 'ycm-core/YouCompleteMe'
 Plugin 'townk/vim-autoclose'
 
 Plugin 'dense-analysis/ale'
@@ -106,6 +104,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " Start NERDTree on opening vim into a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+let NERDTreeShowHidden=1
 
 " Ctrl P Config
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,bower_components,vendor
@@ -194,3 +193,4 @@ let g:ale_fix_on_save = 1
 
 Plugin 'editorconfig/editorconfig-vim'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+

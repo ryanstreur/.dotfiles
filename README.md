@@ -68,3 +68,8 @@ export BROWSER='/mnt/c/Program Files/Firefox/firefox.exe'
 
 Setting up gtags today
 http://manpages.ubuntu.com/manpages/bionic/man5/gtags.conf.5.html
+
+Required for building global from source
+```bash
+sudo apt install libncurses5-dev
+```

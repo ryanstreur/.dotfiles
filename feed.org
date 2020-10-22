@@ -1,5 +1,0 @@
-* Feeds                                                              :elfeed:
-** News                                                               :news:
-** Tech                                                               :tech:
-*** https://news.ycombinator.com/rss
-** Dev                                                                 :dev:

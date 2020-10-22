@@ -4,72 +4,11 @@ Mostly this repo is an effort to get my configuration under control, and to make
 
 ## Dotfile Repos I Admire
 
+- [dotfiles.github.io](https://dotfiles.github.io/frameworks/)
 - GitHub user [Demophoon's](https://github.com/demophoon/dotfiles)
-
-## Shell
-
-* Install Oh My Zsh
-
-https://github.com/ohmyzsh/ohmyzsh
-`sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-
-* Install Oh My Tmux
-
-https://github.com/gpakosz/.tmux
-```bash
-cd
-git clone https://github.com/gpakosz/.tmux.git
-ln -s -f .tmux/.tmux.conf
-cp .tmux/.tmux.conf.local .
-```
-
-## Gitconfig
-
-http://michaelwales.com/articles/make-gitconfig-work-for-you/
-
-## .vimrc
- 
-https://github.com/VundleVim/Vundle.vim#quick-start
-
-```vimscript
-" Set start command for WSL to open files in
-" Windows OS, not ubuntu
-let g:netrw_browsex_viewer="cmd.exe /C start"
-```
-
 
 ## Terminal Emulators
 
 ### Windows Terminal
 
-* [using the JSON settings](https://github.com/microsoft/terminal/blob/master/doc/cascadia/SettingsSchema.md)
-
-## Linux Programs
-
-* Ack
-* Git
-* nvm
-
-* pip3 install --user pynvim
-
-brain data org.md org.org recurring.org rsg-notes.md rsg-todo.md Install exuberant ctags
-
-Stuff I think is neat in general!
-https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes#spaceship-zsh
-
-Ubuntu packages to install
-
-zsh
-
-below required to open links in WSL in windows browser
-```bash
-export BROWSER='/mnt/c/Program Files/Firefox/firefox.exe'
-```
-
-Setting up gtags today
-http://manpages.ubuntu.com/manpages/bionic/man5/gtags.conf.5.html
-
-Required for building global from source
-```bash
-sudo apt install libncurses5-dev
-```
+- [using the JSON settings](https://github.com/microsoft/terminal/blob/master/doc/cascadia/SettingsSchema.md)

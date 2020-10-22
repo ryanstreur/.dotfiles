@@ -1,0 +1,38 @@
+# Oh My Zsh Config
+# https://github.com/ohmyzsh/ohmyzsh/wiki
+export ZSH=$HOME/.oh-my-zsh
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# I also think this theme is neat:
+# https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes#spaceship-zsh
+# but after using it for a while I found it a little too heavyweight for me.
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+  django
+  docker
+  vscode # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins#vscode
+  web-search
+  z
+)
+
+source $ZSH/oh-my-zsh.sh

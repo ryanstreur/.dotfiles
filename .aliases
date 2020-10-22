@@ -1,0 +1,9 @@
+alias vim=nvim
+alias v.='$EDITOR .'
+alias emc=emacs26
+alias py=python3
+alias :q=exit
+
+alias djr="python manage.py runserver"
+alias djm="python manage.py migrate"
+alias djmm="python manage.py makemigrations"

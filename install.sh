@@ -117,7 +117,17 @@ sudo apt install -y mono-complete
 
 cd ~/.vim/bundle/YouCompleteMe
 python3 install.py --all
+cd -
 
 # gtags
 
 sudo apt install -y libncurses5-dev
+
+################################################################################
+# spacemacs
+################################################################################
+
+git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+cd $HOME/.emacs.d
+git checkout develop
+cd -

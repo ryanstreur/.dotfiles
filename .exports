@@ -32,3 +32,5 @@ export GOPATH=$HOME/go-work
 
 # The following is required for YouCompleteMe with Pyenv
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
+
+export DJANGO_READ_DOT_ENV_FILE=True

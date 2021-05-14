@@ -500,18 +500,8 @@ before packages are loaded."
     ;; here goes your Org config :)
     ;; ORG SETUP
 
-    (setq org-todo-keywords '((sequence "TODO" "DONE")
-                              (sequence "NEW" "INPROGRESS" "CODEREVIEW" "TEAMREVIEW" "POREVIEW" "MERGED"))
-
-          org-todo-keyword-faces '(("NEW" . "gray")
-                                   ("INPROGRESS" . "#007acc")
-                                   ("CODEREVIEW" . "yellow")
-                                   ("TEAMREVIEW" . "orange")
-                                   ("POREVIEW" . "orange")
-                                   ("MERGED" . "green"))
-
+    (setq org-startup-with-inline-images "t"
           org-agenda-files '("~/org")
-
           org-capture-templates '(("t" "Todo" entry
                                    (file+headline
                                     "~/org/working.org"
@@ -537,8 +527,7 @@ before packages are loaded."
                                       "~/org/working.org"
                                       "Problems")
                                     "* %?\n%T\n%a")
-                                  )
-          )
+                                  ))
 
     ;; I'd like to add a hook which puts you in insert mode when you enter the
     ;; note buffer after completing a recurring task, but I'm not sure how to.
@@ -554,7 +543,6 @@ before packages are loaded."
 
     ;; ORG BRAIN SETUP
     (setq org-brain-path "~/Dropbox/notes/brain")
-    (setq-default elfeed-search-filter "@1-day-ago !trump +unread -hf -s ")
     ;; For Evil users
     (with-eval-after-load 'evil
       (evil-set-initial-state 'org-brain-visualize-mode 'emacs))
@@ -571,3 +559,21 @@ before packages are loaded."
 
   ;; Do not write anything past this comment. This is where Emacs will
   ;; auto-generate custom variable definitions.
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:background nil)))))
+)

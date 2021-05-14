@@ -16,10 +16,10 @@ Plugin 'morhetz/gruvbox'
 """"""""""""""""""""
 
 " Interface Features
-Plugin 'scrooloose/nerdtree'
 Plugin 'https://github.com/Yggdroot/indentLine.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'flazz/vim-colorschemes'
 
 " Source Control
 Plugin 'airblade/vim-gitgutter'
@@ -27,7 +27,7 @@ Plugin 'tpope/vim-fugitive'
 
 " Completion
 Plugin 'dense-analysis/ale'
-Plugin 'ycm-core/YouCompleteMe'
+" Plugin 'ycm-core/YouCompleteMe'
 
 " Motion, Navigation, Search
 Plugin 'tpope/vim-unimpaired'
@@ -71,7 +71,7 @@ Plugin 'https://github.com/vim-scripts/utl.vim.git'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme gruvbox
+colorscheme pencil
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Configuration
@@ -82,9 +82,9 @@ colorscheme gruvbox
 
 " NERDTree Config
 " Start NERDTree on opening vim into a directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-let NERDTreeShowHidden=1
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" let NERDTreeShowHidden=1
 
 " Ctrl P Config
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,bower_components,vendor

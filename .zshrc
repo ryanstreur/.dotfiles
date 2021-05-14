@@ -1,2 +1,3 @@
-source $HOME/.bash_profile
+source $HOME/.bashrc
 source $HOME/.my-oh-my-zsh
+

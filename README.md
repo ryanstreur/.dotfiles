@@ -26,3 +26,11 @@ Mostly this repo is an effort to get my configuration under control, and to make
 - fzf
   - [fzf on github](https://github.com/junegunn/fzf)
 
+## Notes
+
+If you see you complete me fail for want of python vim compilation, it means you need to run
+
+```sh
+pip install pynvim
+```
+

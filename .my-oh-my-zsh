@@ -30,7 +30,7 @@ plugins=(
   git
   django
   docker
-  vscode # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins#vscode
+  vscode # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode
   web-search
   z
 )

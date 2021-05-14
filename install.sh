@@ -1,6 +1,22 @@
 #!/bin/bash
 
 ################################################################################
+# Install Apt Dependencies
+################################################################################
+
+sudo apt-get update
+sudo apt-get install zsh curl
+
+################################################################################
+# Neovim
+# https://github.com/neovim/neovim/wiki/Installing-Neovim#debian
+# It also says python-neovim and python3-neovim are available,
+# but I don't see them when I try to install them here.
+################################################################################
+
+sudo apt-get install neovim exuberant-ctags
+
+################################################################################
 # Link Config Files
 ################################################################################
 
@@ -72,3 +88,17 @@ curl https://pyenv.run | bash
 
 cd ~/.vim/bundle/YouCompleteMe
 python3 install.py --all
+cd -
+
+# gtags
+
+sudo apt install -y libncurses5-dev
+
+################################################################################
+# spacemacs
+################################################################################
+
+git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+cd $HOME/.emacs.d
+git checkout develop
+cd -

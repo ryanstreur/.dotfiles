@@ -16,6 +16,7 @@ Plugin 'morhetz/gruvbox'
 """"""""""""""""""""
 
 " Interface Features
+Plugin 'scrooloose/nerdtree'
 Plugin 'https://github.com/Yggdroot/indentLine.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -56,7 +57,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'ElmCast/elm-vim'
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -82,9 +82,9 @@ colorscheme pencil
 
 " NERDTree Config
 " Start NERDTree on opening vim into a directory
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-" let NERDTreeShowHidden=1
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+let NERDTreeShowHidden=1
 
 " Ctrl P Config
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,bower_components,vendor

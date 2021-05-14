@@ -7,8 +7,30 @@ Mostly this repo is an effort to get my configuration under control, and to make
 - [dotfiles.github.io](https://dotfiles.github.io/frameworks/)
 - GitHub user [Demophoon's](https://github.com/demophoon/dotfiles)
 
-## Terminal Emulators
+## Tools
 
-### Windows Terminal
+- bash
+  - [GitHub Bash topic](https://github.com/topics/bash)
+- zsh
+- Windows Terminal
+  - [using the JSON settings](https://github.com/microsoft/terminal/blob/master/doc/cascadia/SettingsSchema.md)
+- tmux
+  - [tmux wiki](https://github.com/tmux/tmux/wiki)
+  - [Oh My Tmux](https://github.com/gpakosz/.tmux/)
+  - [256 colors in tmux](https://unix.stackexchange.com/questions/1045/getting-256-colors-to-work-in-tmux)
+  - [True colors in tmux](https://jdhao.github.io/2021/03/17/nvim_truecolor_tmux_windows/)
+  - [True colors in vim and tmux](https://deductivelabs.com/blog/tech/using-true-color-vim-tmux/)
+- vim
+  - [vim awesome website](https://vimawesome.com/)
+    - plugins etc.
+- fzf
+  - [fzf on github](https://github.com/junegunn/fzf)
 
-- [using the JSON settings](https://github.com/microsoft/terminal/blob/master/doc/cascadia/SettingsSchema.md)
+## Notes
+
+If you see you complete me fail for want of python vim compilation, it means you need to run
+
+```sh
+pip install pynvim
+```
+

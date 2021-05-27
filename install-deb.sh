@@ -35,14 +35,6 @@ sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
 
-################################################################################
-# YouCompleteMe
-# https://github.com/ycm-core/YouCompleteMe#linux-64-bit
-################################################################################
-
-sudo apt install -y build-essential cmake vim python3-dev
-sudo apt install -y mono-complete
-
 # gtags
 
 sudo apt install -y libncurses5-dev

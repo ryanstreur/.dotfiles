@@ -47,5 +47,3 @@ syntax enable
 " Make the cursorline an underline instead of a highlight
 " https://stackoverflow.com/questions/33936915/how-to-underline-rather-than-highlight-the-current-line-in-vim
 set cursorline
-hi clear CursorLine
-hi CursorLine gui=underline cterm=underline ctermfg=None guifg=None

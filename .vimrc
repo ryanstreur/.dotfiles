@@ -7,7 +7,6 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-source $HOME/.vim-plugins.vim
 
 " Make the gutters darker than the background.
 set expandtab
@@ -47,3 +46,7 @@ syntax enable
 " Make the cursorline an underline instead of a highlight
 " https://stackoverflow.com/questions/33936915/how-to-underline-rather-than-highlight-the-current-line-in-vim
 set cursorline
+
+if filereadable('$HOME/.vim-plugins.vim')
+  source $HOME/.vim-plugins.vim
+endif

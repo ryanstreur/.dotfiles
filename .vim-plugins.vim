@@ -10,50 +10,50 @@ Plugin 'VundleVim/Vundle.vim'
  
 " Colors
 
-Plugin 'morhetz/gruvbox'
+
+" Plugin 'flazz/vim-colorschemes'
+" vim-colorschemes installs too many color schemes for me
+" Switching to installing just one
+" Plugin 'morhetz/gruvbox'
+Plugin 'tomasr/molokai'
 
 " Editor
 """"""""""""""""""""
 
 " Interface Features
 Plugin 'scrooloose/nerdtree'
-Plugin 'https://github.com/Yggdroot/indentLine.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'flazz/vim-colorschemes'
 
 " Source Control
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 
 " Completion
-Plugin 'dense-analysis/ale'
-" Plugin 'ycm-core/YouCompleteMe'
+" Plugin 'dense-analysis/ale'
 
 " Motion, Navigation, Search
-Plugin 'tpope/vim-unimpaired'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'easymotion/vim-easymotion' "https://github.com/easymotion/vim-easymotion
-Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'tpope/vim-unimpaired'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'easymotion/vim-easymotion' "https://github.com/easymotion/vim-easymotion
+" Plugin 'christoomey/vim-tmux-navigator'
+" Hardly ever use the above, except maybe ctrlp, removing them.
 
 " Editing
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 
-Plugin 'wincent/Command-T'
-
 " Syntax, Format, Tags
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
-Plugin 'majutsushi/tagbar'
 Plugin 'editorconfig/editorconfig-vim'
 
 " Language-Specific
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'posva/vim-vue'
-Plugin 'mattn/emmet-vim'
+" Plugin 'posva/vim-vue'
+" Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'leafgarland/typescript-vim'
@@ -64,6 +64,7 @@ Plugin 'gabrielelana/vim-markdown'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'junegunn/goyo.vim'
 
+" Universal text linking
 Plugin 'https://github.com/vim-scripts/utl.vim.git'
 
 
@@ -71,19 +72,15 @@ Plugin 'https://github.com/vim-scripts/utl.vim.git'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme pencil
+colorscheme molokai
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Indent Guide Configuration
 " https://github.com/yggdroot/indentline
 
 " NERDTree Config
-" Start NERDTree on opening vim into a directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 let NERDTreeShowHidden=1
 
 " Ctrl P Config
@@ -93,9 +90,12 @@ let g:ctrlp_show_hidden = 1
 " Vim-Markdown Config
 let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_autowrite = 1
-let g:vim_markdown_conceal = 0
+let g:markdown_enable_folding = 1
+let g:vim_markdown_conceal = 1
 
-
+""""""""""""""""""""
+" Syntastic
+""""""""""""""""""""
 " Syntastic Recommended Config https://github.com/vim-syntastic/syntastic#3-recommended-settings 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -113,11 +113,15 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
-"
+
+""""""""""""""""""""
 " Omnicomplete
+""""""""""""""""""""
 set omnifunc=syntaxcomplete#Complete
 
+""""""""""""""""""""
 "JavaScript
+""""""""""""""""""""
 
 let g:javascript_plugin_jsdoc = 1
 augroup javascript_folding
@@ -125,20 +129,9 @@ augroup javascript_folding
   au FileType javascript setlocal foldmethod=syntax
 augroup END
 
-let g:javascript_conceal_function             = "ƒ"
-" let g:javascript_conceal_null                 = "ø"
-" let g:javascript_conceal_this                 = "@"
-" let g:javascript_conceal_return               = "⇚"
-" let g:javascript_conceal_undefined            = "¿"
-" let g:javascript_conceal_NaN                  = "ℕ"
-" let g:javascript_conceal_prototype            = "¶"
-" let g:javascript_conceal_static               = "•"
-" let g:javascript_conceal_super                = "Ω"
-" let g:javascript_conceal_arrow_function       = "⇒"
-let g:javascript_conceal_noarg_arrow_function = "🞅"
-let g:javascript_conceal_underscore_arrow_function = "🞅"
-
+""""""""""""""""""""
 " Easytags config
+""""""""""""""""""""
 let g:easytags_async = 1
 
 set conceallevel=1
@@ -156,7 +149,21 @@ let g:ale_fixers = {
 
 let g:ale_fix_on_save = 1
 
-
 " EditorConfig Config
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+
+""""""""""""""""""""
+" Deoplete
+""""""""""""""""""""
+" let g:deoplete#enable_at_startup = 1
+
+" 7/26/21 removing some plugins to try to improve perf
+" Plugin 'https://github.com/Yggdroot/indentLine.git'
+Plugin 'wincent/Command-T'
+
+
+" Start NERDTree on opening vim into a directory
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif

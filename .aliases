@@ -1,10 +1,14 @@
 alias vim=nvim
 alias v.='$EDITOR .'
 alias emc=emacs26
-alias py=python3
 alias :q=exit
+
+
+alias py=python3
+alias pipup="python -m pip install --upgrade pip"
 
 alias djr="python manage.py runserver"
 alias djm="python manage.py migrate"
 alias djmm="python manage.py makemigrations"
+alias djt="python manage.py test"
 

@@ -7,7 +7,6 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-source $HOME/.vim-plugins.vim
 
 " Make the gutters darker than the background.
 set expandtab
@@ -80,3 +79,7 @@ set cursorline
 
 filetype plugin indent on
 syntax enable
+
+if filereadable('$HOME/.vim-plugins.vim')
+  source $HOME/.vim-plugins.vim
+endif

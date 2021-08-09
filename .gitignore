@@ -7,3 +7,12 @@ GTAGS
 
 .netrwhist
 
+.config/coc
+.config/yarn
+.config/configstore
+.config/insight-nodejs
+.config/vscode-sqltools
+.config/wslu
+
+# Let VSCode-Sync handle this
+.config/Code

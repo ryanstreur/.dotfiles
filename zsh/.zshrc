@@ -5,8 +5,12 @@ source $HOME/.aliases
 
 export PATH=$PATH:/home/ryan/bin
 
-if [[ -f "/home/ryan/lib/azure-cli/az.completion" ]];then
+if [[ -a "/home/ryan/lib/azure-cli/az.completion" ]];then
 	source '/home/ryan/lib/azure-cli/az.completion'
+fi
+
+if [[ -a "~/.local.zsh" ]]; then
+	source "~/.local.zsh"
 fi
 
 eval "$(pyenv init -)"

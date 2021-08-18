@@ -59,7 +59,6 @@ endfunction
 function Timestamp()
   return strftime("%I:%M %p")
 endfunction
-
 nnoremap <M-T> "=DateTimestamp()<CR>P
 inoremap <M-T> <C-R>=DateTimestamp()<CR>
 
@@ -80,6 +79,7 @@ set cursorline
 filetype plugin indent on
 syntax enable
 
-if filereadable('$HOME/.vim-plugins.vim')
-  source $HOME/.vim-plugins.vim
-endif
+source $HOME/.vim-plugins.vim
+
+let g:netrw_browsex_viewer="open"
+let g:python3_host_prog="/home/ryan/.pyenv/versions/3.9.5/bin/python"

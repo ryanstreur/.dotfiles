@@ -66,3 +66,6 @@ git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
 cd $HOME/.emacs.d
 git checkout develop
 cd -
+
+# Fira Code Installation
+# https://www.nerdfonts.com/font-downloads

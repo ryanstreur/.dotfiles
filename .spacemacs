@@ -642,6 +642,7 @@ before packages are loaded."
     (setq org-journal-dir "~/org/journal/")
 
   )
+  )
 
 
 ;; Do not write anything past this comment. This is where Emacs will

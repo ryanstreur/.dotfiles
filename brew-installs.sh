@@ -30,6 +30,8 @@ brew install --cask firefox
 brew install --cask android-studio
 brew install --cask qgis
 brew install --cask 1password
+
+# brew install --cask virtualbox
 # brew install --cask vagrant
 
 brew install \

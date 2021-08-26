@@ -45,6 +45,7 @@ brew install \
 	pyenv \
 	nvm \
 	tmux \
+  # gdal \
   ripgrep
 
 brew install \

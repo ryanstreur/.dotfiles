@@ -1,3 +1,8 @@
+################################################################################
+#
+# https://docs.brew.sh/
+#
+#
 # MS Apps to Install
 # - Teams
 # - Office Suite
@@ -5,6 +10,8 @@
 # - Pyenv
 # - Vagrant
 # - Docker
+#
+################################################################################
 
 # https://formulae.brew.sh/cask/iterm2#default
 brew install --cask iterm2

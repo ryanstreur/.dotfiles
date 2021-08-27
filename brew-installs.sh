@@ -55,3 +55,6 @@ brew install \
 
 # may need MS remote desktop?
 # brew install --cask microsoft-remote-desktop
+brew install --cask \
+  pgadmin4
+  

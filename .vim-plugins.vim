@@ -10,34 +10,28 @@ Plugin 'VundleVim/Vundle.vim'
  
 " Colors
 
-
-" Plugin 'flazz/vim-colorschemes'
-" vim-colorschemes installs too many color schemes for me
-" Switching to installing just one
-" Plugin 'morhetz/gruvbox'
 Plugin 'tomasr/molokai'
 
 " Editor
 """"""""""""""""""""
 
 " Interface Features
-" Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 " Source Control
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/goyo.vim'
 
 " Completion
-" Plugin 'dense-analysis/ale'
+Plugin 'dense-analysis/ale'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " Motion, Navigation, Search
-" Plugin 'tpope/vim-unimpaired'
-" Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'easymotion/vim-easymotion' "https://github.com/easymotion/vim-easymotion
-" Plugin 'christoomey/vim-tmux-navigator'
-" Hardly ever use the above, except maybe ctrlp, removing them.
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Editing
 Plugin 'tpope/vim-surround'
@@ -45,8 +39,6 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 
 " Syntax, Format, Tags
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
 Plugin 'editorconfig/editorconfig-vim'
 
 " Language-Specific
@@ -57,12 +49,6 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'othree/html5.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'leafgarland/typescript-vim'
-
-" Markdown
-Plugin 'godlygeek/tabular'
-Plugin 'gabrielelana/vim-markdown'
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'junegunn/goyo.vim'
 
 " Universal text linking
 Plugin 'https://github.com/vim-scripts/utl.vim.git'
@@ -161,7 +147,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " 7/26/21 removing some plugins to try to improve perf
 " Plugin 'https://github.com/Yggdroot/indentLine.git'
-Plugin 'wincent/Command-T'
 
 
 " Start NERDTree on opening vim into a directory

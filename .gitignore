@@ -16,3 +16,6 @@ GTAGS
 
 # Let VSCode-Sync handle this
 .config/Code
+
+.vim/bundle
+.vim/plug

@@ -18,4 +18,4 @@ GTAGS
 .config/Code
 
 .vim/bundle
-.vim/plug
+.vim/autoload/plug.vim

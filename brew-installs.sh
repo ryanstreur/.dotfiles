@@ -45,12 +45,16 @@ brew install \
 	pyenv \
 	nvm \
 	tmux \
-  # gdal \
-  ripgrep
+  gdal \
+  deno \
+  node \
+  bat \
+  ripgrep \
+  universal-ctags
 
 brew install \
   # https://ctags.io/
-  universal-ctags
+  
 
 
 # may need MS remote desktop?

@@ -19,3 +19,7 @@ GTAGS
 
 .vim/bundle
 .vim/autoload/plug.vim
+
+# zsh
+.zcompdump*
+.zsh_history

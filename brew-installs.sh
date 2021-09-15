@@ -50,7 +50,8 @@ brew install \
   node \
   bat \
   ripgrep \
-  universal-ctags
+  universal-ctags \
+  wget
 
 brew install \
   # https://ctags.io/

@@ -2,6 +2,10 @@
 " Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"Leader
+nnoremap <Space> <Nop>
+let mapleader=" "
+
 " Meta+Shift+F formats a file
 map <M-S-F> :normal gg=G<C-O>
 

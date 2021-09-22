@@ -24,15 +24,17 @@ brew install neovim
 brew install --cask visual-studio-code
 brew install --cask emacs
 
-brew install --cask microsoft-office
-brew install --cask microsoft-teams
-brew install --cask teamviewer
+brew install --cask microsoft-office \
+  microsoft-teams \
+  zotero
+# brew install --cask teamviewer
 # brew install --cask slack
 
+
 # Browsers
-brew install --cask google-chrome
-brew install --cask brave-browser
-brew install --cask firefox
+brew install --cask firefox \
+  brave-browser \
+  gooogle-chrome
 
 brew install --cask android-studio
 brew install --cask qgis
@@ -43,7 +45,6 @@ brew install --cask 1password
 
 brew install \
 	pyenv \
-	nvm \
 	tmux \
   gdal \
   deno \
@@ -51,7 +52,10 @@ brew install \
   bat \
   ripgrep \
   universal-ctags \
-  wget
+  wget \
+  telnet \
+  lua \
+  luarocks
 
 brew install \
   # https://ctags.io/

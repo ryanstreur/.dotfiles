@@ -17,8 +17,10 @@ GTAGS
 # Let VSCode-Sync handle this
 .config/Code
 
+# Vim Plugin Directories
 .vim/bundle
 .vim/autoload/plug.vim
+nvim/plugin
 
 # zsh
 .zcompdump*

@@ -3,6 +3,7 @@ source $HOME/.vim/mappings.vim
 
 lua require('plugins')
 lua require('config')
+lua require('nvim-tree-config')
 
 """"""""""""""""""""
 " Telescope

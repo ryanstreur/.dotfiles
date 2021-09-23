@@ -55,7 +55,9 @@ brew install \
   wget \
   telnet \
   lua \
-  luarocks
+  luarocks \
+  postgresql \
+  mysql # required for rmove
 
 brew install \
   # https://ctags.io/

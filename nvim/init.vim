@@ -4,6 +4,8 @@ source $HOME/.vim/mappings.vim
 lua require('plugins')
 lua require('config')
 lua require('tree-config')
+lua require("format-config")
+lua require("lsp-config")
 
 """"""""""""""""""""
 " Telescope

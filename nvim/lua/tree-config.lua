@@ -58,7 +58,7 @@ require"nvim-tree".setup {
     ignore_list = {}
   },
   system_open = {
-    cmd  = open,
+    cmd  = "open",
     args = {}
   },
   view = {

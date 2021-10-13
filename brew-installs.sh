@@ -44,7 +44,7 @@ brew install --cask 1password
 # brew install --cask vagrant
 
 brew install \
-	pyenv \
+  pyenv \
 	tmux \
   gdal \
   deno \
@@ -57,15 +57,16 @@ brew install \
   lua \
   luarocks \
   postgresql \
+  postgis \
   mysql # required for rmove
 
 brew install \
   # https://ctags.io/
-  
+
 
 
 # may need MS remote desktop?
 # brew install --cask microsoft-remote-desktop
-brew install --cask \
-  pgadmin4
-  
+brew install --cask 
+  pgadmin4 # https://www.pgadmin.org/
+

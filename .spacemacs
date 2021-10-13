@@ -617,15 +617,15 @@ before packages are loaded."
     ;; ORG SETUP
 
     (setq org-startup-with-inline-images "t"
-      org-agenda-files '("~/org" "~/org/2021")
+      org-agenda-files '("~/org" "~/repos/rsg-notes/org/2021" "~/repos/rsg-notes/org")
       org-capture-templates '(("t" "Todo" entry
                                 (file+headline
-                                  "~/org/working.org"
+                                  "~/repos/rsg-notes/org/working.org"
                                   "Tasks")
                                 "* TODO %?\n%T\n%a")
                                ("n" "Working Note" entry
                                  (file+headline
-                                   "~/org/working.org"
+                                   "~/repos/rsg-notes/org/working.org"
                                    "Notes")
                                  "* %?\n%T\n%a\n")
                                ))

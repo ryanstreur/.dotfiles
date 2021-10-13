@@ -2,8 +2,9 @@ source $HOME/.vim/settings.vim
 source $HOME/.vim/mappings.vim
 
 lua require('plugins')
+
 lua require('config')
-lua require('tree-config')
+" lua require('tree-config')
 lua require("format-config")
 lua require("lsp-config")
 
@@ -26,7 +27,7 @@ colorscheme material
 " Nvim-Tree
 """"""""""""""""""""
 
-nnoremap <Leader>b :NvimTreeToggle<CR>
+nnoremap <Leader>b :Lexplore<CR>
 
 """"""""""""""""""""
 " Other mappings
@@ -34,4 +35,6 @@ nnoremap <Leader>b :NvimTreeToggle<CR>
 
 tnoremap <Esc> <C-\><C-n>
 nnoremap <C-`> :terminal
+
+let g:netrw_browsex_viewer= "open"
 

@@ -1,0 +1,3 @@
+func() {
+  tmux attach
+}

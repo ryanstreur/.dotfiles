@@ -38,10 +38,10 @@ return require('packer').startup(function()
   -- Interface
   use 'kyazdani42/nvim-web-devicons' -- https://github.com/kyazdani42/nvim-web-devicons
 
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-  }
+  -- use {
+    -- 'kyazdani42/nvim-tree.lua',
+    -- requires = 'kyazdani42/nvim-web-devicons',
+  -- }
 
 
   -- Statusline

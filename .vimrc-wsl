@@ -4,5 +4,4 @@ source $HOME/dotfiles/.vimrc
 " Should add way to detect OS later, but now it's enough to just link a
 " different file when necessary
 let g:netrw_browsex_viewer="cmd.exe /C start"
-let g:python3_host_prog="/home/ryan/.pyenv/versions/3.9.5/bin/python"
 

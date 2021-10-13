@@ -18,17 +18,6 @@ sudo apt-get install neovim exuberant-ctags
 
 
 ################################################################################
-# Pyenv
-# https://github.com/pyenv/pyenv-installer
-################################################################################
-
-# Apt Depenedencies
-# https://github.com/pyenv/pyenv/wiki/Common-build-problems
-sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
-  libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-  xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
-
-################################################################################
 # NVM
 # https://github.com/nvm-sh/nvm
 ################################################################################

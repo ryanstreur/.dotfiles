@@ -12,3 +12,14 @@ alias djm="python manage.py migrate"
 alias djmm="python manage.py makemigrations"
 alias djt="python manage.py test"
 
+
+# tmux aliases
+SESSION_GROUP=sgrp
+alias tct="tmux choose-tree"
+
+
+alias tdf="tmux new-session -A -t $SESSION_GROUP -c $HOME/dotfiles -s dotfiles"
+alias trmove="tmux new-session -A -t $SESSION_GROUP -c $HOME/repos/rmove -s rmove"
+alias ttfg="tmux new-session -A -t $SESSION_GROUP -c $HOME/repos/tfguide -s tfguide"
+
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"

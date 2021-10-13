@@ -1,3 +1,6 @@
+# To analyze the performance of this file, uncomment below and the zprof call at the bottom
+zmodload zsh/zprof
+
 source $HOME/.my-oh-my-zsh
 source $HOME/.path
 source $HOME/.exports
@@ -13,5 +16,4 @@ if [[ -a ~/.local.sh ]]; then
 	source ~/.local.sh
 fi
 
-eval "$(pyenv init -)"
-
+# zprof

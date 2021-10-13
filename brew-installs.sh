@@ -7,7 +7,6 @@
 # - Teams
 # - Office Suite
 # General Apps
-# - Pyenv
 # - Vagrant
 # - Docker
 #
@@ -44,7 +43,6 @@ brew install --cask 1password
 # brew install --cask vagrant
 
 brew install \
-  pyenv \
 	tmux \
   gdal \
   deno \

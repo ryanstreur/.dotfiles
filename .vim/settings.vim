@@ -43,5 +43,3 @@ let g:netrw_banner=0
 let g:netrw_keepdir = 0
 let g:netrw_liststyle=3
 let g:netrw_winsize=15
-
-let g:python3_host_prog="/Users/ryan.streur/.pyenv/versions/nvim/bin/python"

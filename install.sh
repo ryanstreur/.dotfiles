@@ -51,12 +51,6 @@ ln -s modules/Vundle.vim $HOME/.vim/bundle/Vundle.vim
 
 vim -c :PluginInstall -c :qa
 
-################################################################################
-# Pyenv
-# https://github.com/pyenv/pyenv-installer
-################################################################################
-
-curl https://pyenv.run | bash
 
 ################################################################################
 # spacemacs

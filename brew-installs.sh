@@ -43,6 +43,7 @@ brew install --cask 1password
 # brew install --cask vagrant
 
 brew install \
+  python \
 	tmux \
   gdal \
   deno \

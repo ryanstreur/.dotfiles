@@ -36,5 +36,4 @@ nnoremap <Leader>b :Lexplore<CR>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <C-`> :terminal
 
-let g:netrw_browsex_viewer= "open"
-
+set clipboard+=unnamedplus

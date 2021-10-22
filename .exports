@@ -17,6 +17,8 @@ fi
 # Installed-Software-Specific
 ################################################################################
 
+# Less
+# LESS - a variable to hold options auto-passed to less
 
 # NVM
 # export NVM_DIR="$HOME/.nvm"
@@ -35,5 +37,6 @@ fi
 # export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
 export DJANGO_READ_DOT_ENV_FILE=True
+export MANPATH=/opt/local/share/man:$MANPATH
 
 env=~/.ssh/agent.env

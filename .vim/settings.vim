@@ -43,3 +43,10 @@ let g:netrw_banner=0
 let g:netrw_keepdir = 0
 let g:netrw_liststyle=3
 let g:netrw_winsize=15
+
+" Replacement for g:netrw_browsex_viewer, which was broken on mac
+" https://github.com/vim/vim/issues/4738#issuecomment-856925080
+" Original command below:
+" nnoremap <silent> gx :execute 'silent! !xdg-open ' . shellescape(expand('<cWORD>'), 1)<cr>
+nnoremap <silent> gx :execute 'silent! !open ' . shellescape(expand('<cWORD>'), 1)<cr>
+

@@ -639,7 +639,7 @@ before packages are loaded."
     (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
     (setq spaceline-org-clock-p t)
-    (setq org-journal-dir "~/org/journal/")
+    (setq org-journal-dir "~/repos/rsg-notes/org/journal/")
 
   )
   )

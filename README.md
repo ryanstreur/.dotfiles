@@ -33,4 +33,7 @@ If you see you complete me fail for want of python vim compilation, it means you
 ```sh
 pip install pynvim
 ```
+## Ideas
 
+- try out some tmux plugins (but is it worth the complexity?)
+  - https://github.com/tmux-plugins/tpm

@@ -6,5 +6,6 @@ PATH=$PATH:$GOPATH/bin
 
 PATH=$PATH:$HOME/.local/bin 
 PATH=$PATH:$HOME/bin
+PATH=$PATH:/opt/local/bin:/opt/local/sbin
 
 export PATH

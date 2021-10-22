@@ -57,7 +57,11 @@ brew install \
   luarocks \
   postgresql \
   postgis \
+  c-blosc \
   mysql # required for rmove
+
+# c-blosc required for mac os catalina to pip install tables
+# https://github.com/PyTables/PyTables/issues/828
 
 brew install \
   # https://ctags.io/

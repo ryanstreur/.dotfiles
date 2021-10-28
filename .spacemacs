@@ -34,34 +34,34 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layers
    '(
       ;; Editor Features
-     auto-completion
-     helm
-     better-defaults
-     emacs-lisp
-     git
-     version-control
-     syntax-checking
-     prettier
-     spell-checking treemacs
+      auto-completion
+      helm
+      better-defaults
+      tmux
+      git
+      version-control
+      syntax-checking
+      prettier
+      spell-checking treemacs
 
-     (shell :variables
-       shell-default-height 30
-       shell-default-position 'bottom)
+      (shell :variables
+        shell-default-height 30
+        shell-default-position 'bottom)
 
       ;; languages
-     lsp
-     markdown
-     multiple-cursors
+      lsp
+      markdown
+      emacs-lisp
 
-     ;; Languages
-     (org :variables
-       org-want-todo-bindings t
-       org-enable-reveal-js-support t
-       org-enable-org-journal-support t
-       org-startup-indented t)
+      ;; Languages
+      (org :variables
+        org-want-todo-bindings t
+        org-enable-reveal-js-support t
+        org-enable-org-journal-support t
+        org-startup-indented t)
 
-     html
-     javascript)
+      html
+      javascript)
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -612,16 +612,13 @@ before packages are loaded."
       browse-url-generic-program "/mnt/c/Windows/System32/cmd.exe"
       browse-url-browser-function #'browse-url-generic))
 
+  ;; Org configuration
   (with-eval-after-load 'org
-    ;; here goes your Org config :)
-    ;; ORG SETUP
 
     (setq org-startup-with-inline-images "t"
       org-agenda-files '("~/org" "~/repos/rsg-notes/org/2021" "~/repos/rsg-notes/org")
       org-capture-templates '(("t" "Todo" entry
-                                (file+headline
-                                  "~/repos/rsg-notes/org/working.org"
-                                  "Tasks")
+                                (file "~/repos/rsg-notes/org/working.org")
                                 "* TODO %?\n%T\n%a")
                                ("n" "Working Note" entry
                                  (file+headline
@@ -642,7 +639,7 @@ before packages are loaded."
     (setq org-journal-dir "~/repos/rsg-notes/org/journal/")
 
   )
-  )
+)
 
 
 ;; Do not write anything past this comment. This is where Emacs will

@@ -27,7 +27,7 @@ colorscheme material
 " Nvim-Tree
 """"""""""""""""""""
 
-nnoremap <Leader>b :Lexplore<CR>
+nnoremap <Leader>b :NvimTreeToggle<CR>
 
 """"""""""""""""""""
 " Other mappings

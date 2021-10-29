@@ -1,3 +1,5 @@
+alias l="ls -la"
+
 alias vim=nvim
 alias v.='$EDITOR .'
 alias emc=emacs26
@@ -12,11 +14,11 @@ alias djm="python manage.py migrate"
 alias djmm="python manage.py makemigrations"
 alias djt="python manage.py test"
 
-alias rsg-notes="emacs -nw ~/repos/rsg-notes"
+alias org="emacs -nw ~/org"
 
 # tmux aliases
 alias tct="tmux choose-tree"
-
+alias tma="tmux attach"
 
 alias tdf="tmux new-session -A -c $HOME/dotfiles -s dotfiles"
 alias trmove="tmux new-session -A -c $HOME/repos/rmove -s rmove"

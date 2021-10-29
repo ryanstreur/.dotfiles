@@ -46,11 +46,20 @@ zinit light romkatv/powerlevel10k
 zinit ice as"completion"
 zinit snippet OMZP::docker/_docker
 
-zinit ice wait
-zinit load zsh-users/zsh-autosuggestions
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+####
+# close tmux window with CTRL-W CTRL-Q
+####
+
+function exitshell() {
+  exit;
+}
+
+zle -N exitshell
+
+bindkey "^wq" exitshell
+
 # zprof
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"

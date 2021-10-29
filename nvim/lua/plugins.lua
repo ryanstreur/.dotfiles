@@ -87,8 +87,9 @@ return require('packer').startup(function()
 
 
   -- Statusline
-  use 'adelarsq/neoline.vim'
+  -- use 'adelarsq/neoline.vim'
   --https://github.com/glepnir/galaxyline.nvim
+  use 'vim-airline/vim-airline'
 
   use 'tpope/vim-sleuth'
   use 'editorconfig/editorconfig-vim'

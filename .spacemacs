@@ -621,10 +621,15 @@ before packages are loaded."
       org-capture-templates '(("t" "Todo" entry
                                 (file "~/org/working.org")
                                 "* TODO %?\n%T\n%a")
-                               ("n" "Working Note" entry
+                               ("w" "Working Note" entry
                                  (file+headline
                                    "~/org/working.org"
                                    "Notes")
+                                 "* %?\n%T\n%a\n")
+                               ("Q" "Question" entry
+                                 (file+headline
+                                   "~/org/working.org"
+                                   "Questions")
                                  "* %?\n%T\n%a\n")
                                ))
 

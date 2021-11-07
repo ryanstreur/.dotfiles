@@ -12,7 +12,7 @@ lua require("lsp-config")
 " Telescope
 """"""""""""""""""""
 " Find files using Telescope command-line sugar.
-nnoremap <C-p> <cmd>Telescope find_files find_command=rg,-i,--hidden,--files,-L,-g=!.git,-g=!node_modules,-g=!build,-g=!Pods<cr>
+nnoremap <C-p> <cmd>Telescope find_files find_command=rg,-i,--hidden,--files,-L,-g=!.git,-g=!node_modules,-g=!build,-g=!Pods,-g=!venv<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>

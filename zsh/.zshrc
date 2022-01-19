@@ -76,7 +76,6 @@ export PATH
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
-zprof
 
 # User configuration
 
@@ -126,3 +125,5 @@ alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias dockergit="docker run -ti --rm -v $(pwd):/git -v $HOME/.ssh:/root/.ssh omnys/git-svn"
 
 eval "$(pyenv init -)"
+
+# zprof

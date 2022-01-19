@@ -129,3 +129,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
+eval "$(pyenv init -)"

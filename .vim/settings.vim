@@ -50,3 +50,5 @@ let g:netrw_winsize=15
 " nnoremap <silent> gx :execute 'silent! !xdg-open ' . shellescape(expand('<cWORD>'), 1)<cr>
 nnoremap <silent> gx :execute 'silent! !open ' . shellescape(expand('<cWORD>'), 1)<cr>
 
+" Fenced code highlighting in Markdown
+

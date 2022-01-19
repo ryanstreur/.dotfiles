@@ -4,7 +4,7 @@ source $HOME/.vim/mappings.vim
 lua require('plugins')
 
 lua require('config')
-" lua require('tree-config')
+lua require('tree-config')
 lua require("format-config")
 lua require("lsp-config")
 
@@ -24,16 +24,9 @@ let g:material_style = 'darker'
 colorscheme material
 
 """"""""""""""""""""
-" Nvim-Tree
-""""""""""""""""""""
-
-nnoremap <Leader>b :NvimTreeToggle<CR>
-
-""""""""""""""""""""
 " Other mappings
 """""""""""""""""""""
 
 tnoremap <Esc> <C-\><C-n>
-nnoremap <C-`> :terminal
 
 set clipboard+=unnamedplus

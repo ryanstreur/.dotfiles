@@ -50,7 +50,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -69,6 +69,10 @@ source $HOME/.path
 source $HOME/.exports
 source $HOME/.aliases
 
+if [[ -a ~/.local.sh ]]; then
+	source ~/.local.sh
+fi
+
 export PATH=$PATH:/home/ryan/bin
 
 ####
@@ -83,16 +87,8 @@ zle -N exitshell
 
 bindkey "^wq" exitshell
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export EDITOR=nvim
 
 bindkey -v
 export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
@@ -100,6 +96,39 @@ JAVA_HOME=/usr/local/opt/openjdk@8
 export JAVA_HOME=/usr/local/opt/openjdk@8
 
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+
+alias l="ls -la"
+
+alias vim=nvim
+alias v.='$EDITOR .'
+alias emc=emacs26
+alias :q=exit
+
+
+alias py=python3
+alias pipup="python -m pip install --upgrade pip"
+
+alias djr="python manage.py runserver"
+alias djm="python manage.py migrate"
+alias djmm="python manage.py makemigrations"
+alias djt="python manage.py test"
+
+alias org="emacs -nw ~/org"
+
+# tmux aliases
+alias tct="tmux choose-tree"
+alias tma="tmux attach"
+
+alias tdf="tmux new-session -A -c $HOME/dotfiles -s dotfiles"
+alias trmove="tmux new-session -A -c $HOME/repos/rmove -s rmove"
+alias ttfg="tmux new-session -A -c $HOME/repos/tfguide -s tfguide"
+alias trmw="tmux new-session -A -c $HOME/repos/rMergeWebsite -s rmergeweb"
+alias trn="tmux new-session -A -c $HOME/repos/rsg-notes -s rsg-notes"
+alias tpops="tmux new-session -A -c $HOME/repos/POPS -s pops"
+
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+alias dockergit="docker run -ti --rm -v $(pwd):/git -v $HOME/.ssh:/root/.ssh omnys/git-svn"
 
 eval "$(pyenv init -)"
 
@@ -113,6 +142,12 @@ export LDFLAGS="$LDFLAGS -L/usr/local/opt/postgresql@9.5/lib"
 export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/postgresql@9.5/include"
 
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/postgresql@9.5/lib/pkgconfig"
-export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
+
+PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/share
+PATH=$PATH:$HOME/bin
+PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
+export PATH
+
 
 zprof

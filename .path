@@ -1,8 +1,0 @@
-PATH=$PATH:/usr/local/bin
-PATH=$PATH:/usr/share
-
-PATH=$PATH:$GOPATH/bin
-
-PATH=$PATH:$HOME/bin
-
-export PATH

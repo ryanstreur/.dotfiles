@@ -50,6 +50,9 @@ zle -N exitshell
 # Environment
 ################################################################################
 
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
 JAVA_HOME=/usr/local/opt/openjdk@8
 export JAVA_HOME=/usr/local/opt/openjdk@8
@@ -124,6 +127,5 @@ alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 alias dockergit="docker run -ti --rm -v $(pwd):/git -v $HOME/.ssh:/root/.ssh omnys/git-svn"
 
-eval "$(pyenv init -)"
 
 # zprof

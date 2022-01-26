@@ -58,6 +58,7 @@ brew install \
   postgresql \
   postgis \
   c-blosc \
+  fd \
   mysql # required for rmove
 
 # c-blosc required for mac os catalina to pip install tables

@@ -5,7 +5,6 @@ lua require('plugins')
 
 lua require('config')
 lua require('tree-config')
-lua require("format-config")
 lua require("lsp-config")
 
 """"""""""""""""""""
@@ -20,13 +19,16 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 """"""""""""""""""""
 " Material Theme
 """"""""""""""""""""
-let g:material_style = 'darker'
-colorscheme material
+" let g:material_style = 'darker'
+" colorscheme material
 
 """"""""""""""""""""
 " Other mappings
 """""""""""""""""""""
 
+
 tnoremap <Esc> <C-\><C-n>
 
 set clipboard+=unnamedplus
+let g:python3_host_prog="~/.pyenv/versions/nvim/bin/python3"
+

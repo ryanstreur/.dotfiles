@@ -25,3 +25,5 @@ nvim/plugin
 # zsh
 .zcompdump*
 .zsh_history
+
+.config/iterm2

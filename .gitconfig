@@ -1,11 +1,8 @@
 # http://michaelwales.com/articles/make-gitconfig-work-for-you/
 
-[user]
-	name = Ryan
-	email = ryan.streur@rsginc.com
-
 [core]
   autocrlf = false
+	autolf = true
 
 [winUpdater]
 	recentlySeenVersion = 2.20.1.windows.1

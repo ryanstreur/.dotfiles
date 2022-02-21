@@ -16,7 +16,6 @@ Plugin 'tomasr/molokai'
 """"""""""""""""""""
 
 " Interface Features
-Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -44,8 +43,6 @@ Plugin 'editorconfig/editorconfig-vim'
 " Language-Specific
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
-" Plugin 'posva/vim-vue'
-" Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'leafgarland/typescript-vim'
@@ -66,11 +63,8 @@ colorscheme molokai
 " Indent Guide Configuration
 " https://github.com/yggdroot/indentline
 
-" NERDTree Config
-let NERDTreeShowHidden=1
-
 " Ctrl P Config
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,bower_components,vendor
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,bower_components,vendor,bundle
 let g:ctrlp_show_hidden = 1
 
 " Vim-Markdown Config
@@ -139,16 +133,3 @@ let g:ale_fix_on_save = 1
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
-
-""""""""""""""""""""
-" Deoplete
-""""""""""""""""""""
-" let g:deoplete#enable_at_startup = 1
-
-" 7/26/21 removing some plugins to try to improve perf
-" Plugin 'https://github.com/Yggdroot/indentLine.git'
-
-
-" Start NERDTree on opening vim into a directory
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif

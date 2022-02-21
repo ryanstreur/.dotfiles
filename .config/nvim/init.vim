@@ -1,34 +1,4 @@
 source $HOME/.vim/settings.vim
 source $HOME/.vim/mappings.vim
-
-lua require('plugins')
-
-lua require('config')
-lua require('tree-config')
-lua require("lsp-config")
-
-""""""""""""""""""""
-" Telescope
-""""""""""""""""""""
-" Find files using Telescope command-line sugar.
-nnoremap <C-p> <cmd>Telescope find_files find_command=rg,-i,--hidden,--files,-L,-g=!.git,-g=!node_modules,-g=!build,-g=!Pods,-g=!venv<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-""""""""""""""""""""
-" Material Theme
-""""""""""""""""""""
-" let g:material_style = 'darker'
-" colorscheme material
-
-""""""""""""""""""""
-" Other mappings
-"""""""""""""""""""""
-
-
-tnoremap <Esc> <C-\><C-n>
-
-set clipboard+=unnamedplus
-let g:python3_host_prog="~/.pyenv/versions/nvim/bin/python3"
+source $HOME/.vim/plugins.vim
 

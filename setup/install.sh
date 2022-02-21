@@ -29,6 +29,7 @@ ln -s -f ~/dotfiles/.vim-plugins.vim ~
 ln -s -f ~/dotfiles/.vimrc ~
 ln -s -f ~/dotfiles/.tmux.conf ~
 ln -s -f ~/dotfiles/.inputrc ~
+ln -s -f ~/dotfiles/.zsh ~
 
 cd dotfiles
 
@@ -43,3 +44,5 @@ cd -
 
 # Fira Code Installation
 # https://www.nerdfonts.com/font-downloads
+
+sudo echo "export ZDOTDIR=$HOME/.zsh"

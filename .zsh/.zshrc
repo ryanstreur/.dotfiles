@@ -64,19 +64,20 @@ export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
 
 export PATH="/usr/local/opt/bzip2/bin:$PATH"
 
-export LDFLAGS="$LDFLAGS -L/usr/local/opt/postgresql@9.5/lib"
-export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/postgresql@9.5/include"
+# export LDFLAGS="$LDFLAGS -L/usr/local/opt/postgresql@9.5/lib"
+# export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/postgresql@9.5/include"
 
-export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/postgresql@9.5/lib/pkgconfig"
+# export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/postgresql@9.5/lib/pkgconfig"
 
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/share
 PATH=$PATH:$HOME/bin
-PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
+#PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
+PATH="$HOME/repos/vagrant/exec:$PATH"
 export PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 

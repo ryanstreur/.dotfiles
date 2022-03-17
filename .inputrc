@@ -1,2 +1,7 @@
 set editing-mode vi
 set keymap vi-command
+
+# https://unix.stackexchange.com/questions/22527/change-cursor-shape-or-color-to-indicate-vi-mode-in-bash/409587#409587
+set vi-ins-mode-string \1\e[5 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+set show-mode-in-prompt on

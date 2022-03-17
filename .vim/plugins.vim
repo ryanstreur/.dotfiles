@@ -50,6 +50,9 @@ Plugin 'leafgarland/typescript-vim'
 " Universal text linking
 Plugin 'https://github.com/vim-scripts/utl.vim.git'
 
+" kitty navigation
+Plugin 'knubie/vim-kitty-navigator'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -64,15 +64,15 @@ export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
 
 export PATH="/usr/local/opt/bzip2/bin:$PATH"
 
-# export LDFLAGS="$LDFLAGS -L/usr/local/opt/postgresql@9.5/lib"
-# export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/postgresql@9.5/include"
+export LDFLAGS="$LDFLAGS -L/usr/local/opt/postgresql@9.5/lib"
+export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/postgresql@9.5/include"
 
-# export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/postgresql@9.5/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/postgresql@9.5/lib/pkgconfig"
 
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/share
 PATH=$PATH:$HOME/bin
-#PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
+PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
 PATH="$HOME/repos/vagrant/exec:$PATH"
 export PATH
 
@@ -87,6 +87,39 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
+
+################################################################################
+# Change cursor on mode change
+# this is for bindkey -v
+# Taken from
+# https://gist.github.com/LukeSmithxyz/e62f26e55ea8b0ed41a65912fbebbe52
+################################################################################
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
 
 
 ################################################################################

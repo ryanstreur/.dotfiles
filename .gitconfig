@@ -33,3 +33,6 @@
 	defaultBranch = main
 [pull]
 	rebase = false
+[user]
+	name = Ryan Streur
+	email = ryan.streur@rsginc.com

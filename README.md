@@ -2,6 +2,17 @@
 
 Mostly this repo is an effort to get my configuration under control, and to make it easier to make my dev environment settings consistent across different machines and operating systems. It's been a headache, and I'd prefer that it be less of one. Ultimately I'd like a simple script which I could use to easily port my configurations over to a new machine. Seems like this would have to be a different script for different environments.
 
+## Installation Steps - Debian
+
+```sh
+# Installing ZSH / Oh My Zsh
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+sudo apt install zsh
+zsh --version
+# Change default shell to zsh
+sudo chsh -s /usr/bin/zsh
+```
+
 ## Dotfile Repos I Admire
 
 - [dotfiles.github.io](https://dotfiles.github.io/frameworks/)

@@ -50,8 +50,8 @@ zle -N exitshell
 # Environment
 ################################################################################
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
 JAVA_HOME=/usr/local/opt/openjdk@8
@@ -126,11 +126,11 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # Aliases
 ################################################################################
 
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 alias l="ls -la"
 
-alias vim=nvim
+# alias vim=nvim
 alias v.='$EDITOR .'
 alias emc=emacs26
 alias :q=exit

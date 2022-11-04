@@ -1,5 +1,14 @@
 # Cheat Sheet
 
+## Linux
+
+Find linux OS version and kernel architecture
+
+```bash
+lsb_release -a # OS info
+uname -m # Kernel architecture
+```
+
 ## Git
 
 ```bash

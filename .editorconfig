@@ -10,10 +10,6 @@ insert_final_newline = true
 indent_style = space
 indent_size = 2
 
-# Windows-style newlines in Windows script files
-*.{cmd,[cC][mM][dD]} text eol=crlf
-*.{bat,[bB][aA][tT]} text eol=crlf
-
 # Matches multiple files with brace expansion notation
 # Set default charset
 [*.{js,py}]

@@ -17,7 +17,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 zstyle ':omz:update' mode auto
 HIST_STAMPS="yyyy-mm-dd"
 plugins=(git)
@@ -161,5 +161,9 @@ alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 alias dockergit="docker run -ti --rm -v $(pwd):/git -v $HOME/.ssh:/root/.ssh omnys/git-svn"
 
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+
+export DENO_INSTALL="/home/ryan/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 # zprof

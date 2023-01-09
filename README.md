@@ -10,7 +10,7 @@ Mostly this repo is an effort to get my configuration under control, and to make
 sudo apt install zsh
 zsh --version
 # Change default shell to zsh
-sudo chsh -s /usr/bin/zsh
+chsh -s /usr/bin/zsh
 ```
 
 ## Dotfile Repos I Admire

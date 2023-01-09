@@ -45,4 +45,5 @@ cd -
 # Fira Code Installation
 # https://www.nerdfonts.com/font-downloads
 
-sudo echo "export ZDOTDIR=$HOME/.zsh"
+sudo apt install zsh
+sudo echo "export 'ZDOTDIR=$HOME/.zsh'" >> /etc/zsh/zshenv

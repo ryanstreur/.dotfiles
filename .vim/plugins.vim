@@ -31,6 +31,7 @@ Plugin 'honza/vim-snippets'
 
 " Motion, Navigation, Search
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Editing
 Plugin 'tpope/vim-surround'
@@ -41,17 +42,14 @@ Plugin 'tpope/vim-commentary'
 Plugin 'editorconfig/editorconfig-vim'
 
 " Language-Specific
-Plugin 'pangloss/vim-javascript'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'othree/html5.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'leafgarland/typescript-vim'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'othree/javascript-libraries-syntax.vim'
+" Plugin 'othree/html5.vim'
+" Plugin 'vim-syntastic/syntastic'
+" Plugin 'leafgarland/typescript-vim'
 
 " Universal text linking
-Plugin 'https://github.com/vim-scripts/utl.vim.git'
-
-" kitty navigation
-Plugin 'knubie/vim-kitty-navigator'
+" Plugin 'https://github.com/vim-scripts/utl.vim.git'
 
 
 " All of your Plugins must be added before the following line
@@ -69,6 +67,10 @@ colorscheme molokai
 " Ctrl P Config
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,bower_components,vendor,bundle
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '/\(\.git\|node_modules\)$',
+  \ 'file': '\v\.(log|jpg|png|jpeg)$',
+  \ }
 
 " Vim-Markdown Config
 let g:vim_markdown_new_list_item_indent = 2

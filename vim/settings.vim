@@ -52,3 +52,6 @@ nnoremap <silent> gx :execute 'silent! !open ' . shellescape(expand('<cWORD>'), 
 
 " Fenced code highlighting in Markdown
 
+packadd termdebug
+
+let g:termdebugger = ['gdb', '-se', './a.out']

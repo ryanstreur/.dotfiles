@@ -74,7 +74,9 @@ PATH=$PATH:/usr/share
 PATH=$PATH:$HOME/bin
 PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
 PATH="$HOME/repos/vagrant/exec:$PATH"
+PATH="/usr/local/go/bin:$PATH"
 export PATH
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh
@@ -165,5 +167,13 @@ export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}
 
 export DENO_INSTALL="/home/ryan/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+export GOPATH="$HOME/go"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+eval "$(rbenv init -)"
+
+alias cdterm="cd /mnt/c/Users/ryan/OneDrive/Documents/cs-ms/PSU/2024/01-winter"
 
 # zprof

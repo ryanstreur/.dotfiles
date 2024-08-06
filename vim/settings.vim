@@ -55,3 +55,5 @@ nnoremap <silent> gx :execute 'silent! !open ' . shellescape(expand('<cWORD>'), 
 packadd termdebug
 
 let g:termdebugger = ['gdb', '-se', './a.out']
+
+au BufRead,BufNewFile *.tpp set filetype=.cpp

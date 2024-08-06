@@ -5,6 +5,16 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set rtp+=~/.vim/bundle/Vundle.vim
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Built-in plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+runtime ftplugin/man.vim
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Third-Party plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
  
@@ -76,4 +86,7 @@ set foldlevel=2
 " EditorConfig Config
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+
+
 

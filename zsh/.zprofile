@@ -4,3 +4,11 @@
 ##
 
 # eval "$(pyenv init --path)"
+
+if [[ -a $HOME/.dotfiles/.aliases ]] then
+  . $HOME/.dotfiles/.aliases
+fi
+
+if [[ -a $HOME/.dotfiles/zsh/antigen.zsh ]] then
+  . $HOME/.dotfiles/zsh/antigen.zsh
+fi

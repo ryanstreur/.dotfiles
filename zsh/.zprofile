@@ -9,6 +9,13 @@ if [[ -a $HOME/.dotfiles/.aliases ]] then
   . $HOME/.dotfiles/.aliases
 fi
 
-if [[ -a $HOME/.dotfiles/zsh/antigen.zsh ]] then
-  . $HOME/.dotfiles/zsh/antigen.zsh
+##########
+# Antigen
+##########
+if [[ -a $HOME/.dotfiles/modules/antigen/antigen.zsh ]] then
+  . $HOME/.dotfiles/modules/antigen/antigen.zsh
+
+  antigen init $HOME/.dotfiles/zsh/.antigenrc
 fi
+
+

@@ -1,0 +1,32 @@
+antigen use oh-my-zsh
+antigen bundle sudo
+antigen bundle zsh-interactive-cd
+antigen bundle zdharma-continuum/fast-syntax-highlighting@master
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle srijanshetty/zsh-pip-completion
+antigen bundle zsh-users/zsh-completions
+antigen bundle git
+antigen bundle pip
+antigen bundle command-not-found
+antigen bundle NullSense/fuzzy-sys
+#antigen bundle thefuck
+antigen bundle ellie/atuin@main
+antigen bundle unixorn/fzf-zsh-plugin@main
+antigen bundle Aloxaf/fzf-tab@master
+antigen bundle tmuxinator
+antigen bundle mosh
+antigen bundle extract
+antigen bundle thewtex/tmux-mem-cpu-load
+antigen bundle zsh_reload
+antigen bundle z-shell/F-Sy-H@main
+antigen bundle zdharma-continuum/zsnapshot@main
+antigen bundle ael-code/zsh-colored-man-pages
+antigen bundle unixorn/autoupdate-antigen.zshplugin
+#antigen bundle history-substring-search
+
+# Apply Theme
+#antigen theme KuoE0/oh-my-zsh-solarized-powerline-theme solarized-powerline #
+#antigen theme jonathan
+antigen theme romkatv/powerlevel10k
+# Finish
+antigen apply

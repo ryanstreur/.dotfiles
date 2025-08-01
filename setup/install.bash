@@ -26,6 +26,8 @@ ln -s -f ~/.dotfiles/vim/ ~/.vim
 ln -s -f ~/.dotfiles/.tmux.conf ~
 ln -s -f ~/.dotfiles/.inputrc ~
 
+ln -s -f ~/.dotfiles/.config ~
+
 cd .dotfiles
 
 ################################################################################
